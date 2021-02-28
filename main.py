@@ -348,8 +348,8 @@ def plot(image, name):
 
 # This block is only generated for testing purposes
 if __name__ == '__main__':
-    skeleton = cv2.imread('skeleton.tif', 0).astype(np.float32)
-    camera_man = cv2.imread('cameraman.tif', 0).astype(np.float32)
+    skeleton = cv2.imread('sample_images/skeleton.tif', 0).astype(np.float32)
+    camera_man = cv2.imread('sample_images/cameraman.tif', 0).astype(np.float32)
 
     plot(camera_man, "original cameraman")
     plot(image_sharpening(camera_man), "Image Sharpening")
