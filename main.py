@@ -6,19 +6,7 @@ from scipy.signal import correlate2d
 
 
 def normalize_matrix(image: np.ndarray, upperbound: int = 255, lowerbound: int = 0, gray_value: int = 0) -> np.ndarray:
-    """This function normalizes our matrix between two custom values
-    right way to iterate on a numpy array and change some values
-    extracted from https://numpy.org/devdocs/reference/arrays.nditer.html
-    values bigger than 255 would change to 255 and less than 0 would change to 0
-    Args:
-        image(np.ndarray): An image as numpy array
-        upperbound(int): upper bound of filtering
-        lowerbound(int): lower bound of filtering
-        gray_value(int): optional value to set for between upper and lower bound
-    Returns:
-        np.ndarray : image after normalization
 
-    """
     with np.nditer(image, op_flags=['readwrite']) as it:
         for i in it:
             if i > upperbound:
